@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.saqlain1020.KU_Point"
     },
     "web": {
       "favicon": "./assets/favicon.png"
