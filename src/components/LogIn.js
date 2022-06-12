@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, TextInput, Image ,TouchableOpacity } from 'react-native'
-import React ,{useState} from 'react'
-import Checkbox from 'expo-checkbox'
+import { StyleSheet, Text, View, TextInput, Image ,TouchableOpacity } from "react-native"
+import React ,{useState} from "react"
+import Checkbox from "expo-checkbox"
 
 
 const Login = ({Navigation}) => {
@@ -10,10 +10,10 @@ const Login = ({Navigation}) => {
 
   return (
     <View style={styles.mainContainer}>
-      <Image source={require('../../assets/ku-logo.png')} style={styles.logo} />
+      <Image source={require("../../assets/ku-logo.png")} style={styles.logo} />
       <View style= {styles.wellcomeNote}>
-<Text style= {styles.wellcomeNote}>KUPOINT Navigation Service</Text>
-</View>
+        <Text style= {styles.wellcomeNote}>KUPOINT Navigation Service</Text>
+      </View>
       <Text style={styles.mainHeader}>Login</Text>
       <Text style={styles.mainDescrption}>
 
@@ -29,14 +29,14 @@ const Login = ({Navigation}) => {
 
       </View>
       <View style={styles.wrapper} >
-      <Checkbox
-      value={agree} 
-      onValueChange={()=>setAgree(!agree)} 
-      color={agree ? "green" : undefined}
-      />
-      <Text style={styles.wrapperText}>
-        {"  "}I have read and agreed with Term and Condition
-      </Text>
+        <Checkbox
+          value={agree} 
+          onValueChange={()=>setAgree(!agree)} 
+          color={agree ? "green" : undefined}
+        />
+        <Text style={styles.wrapperText}>
+          {"  "}I have read and agreed with Term and Condition
+        </Text>
 
       </View>
       
@@ -59,13 +59,13 @@ const styles = StyleSheet.create({
     padding:10,
     height: 120,
     width: 350,
-    alignItems:'center',
+    alignItems:"center",
 
   },
   wellcomeNote:{
-alignItems:'center',
-paddingHorizontal: 20,
-paddingTop: 30,
+    alignItems:"center",
+    paddingHorizontal: 20,
+    paddingTop: 30,
   },
   mainContainer: {
     height: "100%",
@@ -118,7 +118,7 @@ paddingTop: 30,
 
   },
   wrapper: {
-    flexDirection:'row',
+    flexDirection:"row",
     paddingTop:30,
     paddingBottom: 15,   
   }, 
@@ -126,15 +126,15 @@ paddingTop: 30,
     color:"white",
     fontSize: 20,
     fontFamily: "RobotoCondensed_400Regular",
-    alignItems:'center',
+    alignItems:"center",
   },
   buttonStyle: {
-    backgroundColor:'green',
+    backgroundColor:"green",
     width:160,
     height:50,
-    flexDirection:'row',
-    justifyContent:'center',
-    alignItems:'center',
+    flexDirection:"row",
+    justifyContent:"center",
+    alignItems:"center",
     marginLeft:90,
     marginVertical:15,
    

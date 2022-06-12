@@ -8,6 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "lint": "eslint --ext .jsx --ext .js src/",
     "build": "eas build -p android --profile preview"
   },
   "dependencies": {
@@ -40,6 +41,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "eslint": "^8.17.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "metro-react-native-babel-preset": "^0.70.3",
     "prettier": "^2.6.2",
     "react-native-webpack-server": "^0.9.3"
