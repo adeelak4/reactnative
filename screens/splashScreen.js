@@ -2,9 +2,13 @@ import React from "react";
 import { View, Text, TouchableOpacity, Dimensions, StyleSheet, StatusBar, Image, Animated } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import useSocket from "./../hooks/useSocket";
+import useBus from "../hooks/useBus";
 
 const SplashScreen = ({ navigation }) => {
   // fadeAnim will be used as the value for opacity. Initial Value: 0
+  let {} = useBus();
+  let {} = useSocket();
 
   return (
     <View style={styles.container}>

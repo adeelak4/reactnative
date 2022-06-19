@@ -19,6 +19,7 @@ const busState = atom({
     },
     async ({ setSelf }) => {
       socket.on(SocketEvent.BUS_LOCATION, (data) => {
+        console.log("bus location get");
         setSelf((obj) => {
           let busses = obj.busses.map((item) => {
             if (item.id === data.bus) {

@@ -12,7 +12,13 @@ const useBus = () => {
     }));
   };
 
-  return { busses: state.busses, selected: state.selectedId, selectBus };
+  return {
+    busses: state.busses,
+    selected: state.selectedId,
+    selectedName: state.busses?.find((item) => item.id === state.selectedId)?.name,
+    selectBus,
+    location: state?.busses?.find((item) => item.id === state.selectedId)?.location,
+  };
 };
 
 export default useBus;
