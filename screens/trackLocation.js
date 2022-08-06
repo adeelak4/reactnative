@@ -45,6 +45,11 @@ const TrackLocation = ({ navigator }) => {
   return (
     <View>
       <MapView
+        showsCompass={true}
+        showsUserLocation={true}
+        showsTraffic={true}
+        showsMyLocationButton={true}
+        showsScale={true}
         style={styles.map}
         initialRegion={{
           latitude: 24.9455,
@@ -60,12 +65,12 @@ const TrackLocation = ({ navigator }) => {
           description={`Location of ${selectedName}`}
           image={BusMarker}
         />
-        <Marker
+        {/* <Marker
           coordinate={{ latitude: myLocation[1], longitude: myLocation[0] }}
           title={"Me"}
           description={"Your Location"}
           image={Dot}
-        />
+        /> */}
       </MapView>
     </View>
   );
