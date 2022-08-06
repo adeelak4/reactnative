@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, Dimensions } from "react-native";
-import MapView, { Geojson, Circle, Marker } from "react-native-maps";
+import MapView, { Geojson, Circle, Marker, GeojsonProps } from "react-native-maps";
 import React from "react";
 import useBus from "../hooks/useBus";
-import Dot from "../assets/dot.png";
+import Dot from "../assets/person_icon.png";
+import BusMarker from "../assets/bus_marker.png";
 import * as Location from "expo-location";
 
 const TrackLocation = ({ navigator }) => {
@@ -52,11 +53,17 @@ const TrackLocation = ({ navigator }) => {
           longitudeDelta: 0.5,
         }}
       >
-        <Geojson geojson={myPlace} strokeColor="red" fillColor="green" strokeWidth={2} title={selectedName} />
+        {/* <Geojson geojson={myPlace} strokeColor="red" fillColor="green" strokeWidth={2} title={selectedName} /> */}
+        <Marker
+          coordinate={{ latitude: coordinates[1], longitude: coordinates[0] }}
+          title={selectedName}
+          description={`Location of ${selectedName}`}
+          image={BusMarker}
+        />
         <Marker
           coordinate={{ latitude: myLocation[1], longitude: myLocation[0] }}
-          title={"title"}
-          description={"Des"}
+          title={"Me"}
+          description={"Your Location"}
           image={Dot}
         />
       </MapView>
