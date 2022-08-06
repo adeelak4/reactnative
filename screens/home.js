@@ -14,7 +14,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { AntDesign } from "@expo/vector-icons";
 
-const home = ({ navigation }) => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -161,4 +161,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default home;
+export default Home;

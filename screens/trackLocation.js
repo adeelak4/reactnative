@@ -5,7 +5,7 @@ import useBus from "../hooks/useBus";
 import Dot from "../assets/dot.png";
 import * as Location from "expo-location";
 
-const trackLocation = ({ navigator }) => {
+const TrackLocation = ({ navigator }) => {
   const { location, selectedName } = useBus();
   const [coordinates, setCoordinates] = React.useState([67.1154, 24.9455]);
   const [myLocation, setMyLocation] = React.useState([1, 1]);
@@ -64,7 +64,7 @@ const trackLocation = ({ navigator }) => {
   );
 };
 
-export default trackLocation;
+export default TrackLocation;
 
 const styles = StyleSheet.create({
   map: {

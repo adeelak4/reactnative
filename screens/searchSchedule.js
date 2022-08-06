@@ -15,9 +15,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { AntDesign } from "@expo/vector-icons";
 import BusList from "../src/components/busList";
 import Ionicon from "@expo/vector-icons/Feather";
-import useBus from "./../hooks/useBus";
+import useBus from "../hooks/useBus";
 
-const searchSchedule = ({ navigation }) => {
+const SearchSchedule = ({ navigation }) => {
   const { busses, selectBus } = useBus();
   console.log(busses);
 
@@ -157,4 +157,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default searchSchedule;
+export default SearchSchedule;

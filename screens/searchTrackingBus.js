@@ -2,9 +2,9 @@ import React from "react";
 import { View, Text, TouchableOpacity, Dimensions, StyleSheet, Image, Animated } from "react-native";
 import BusList from "../src/components/busList";
 import Ionicon from "@expo/vector-icons/Feather";
-import useBus from "./../hooks/useBus";
+import useBus from "../hooks/useBus";
 
-const searchTrackingBus = ({ navigation }) => {
+const SearchTrackingBus = ({ navigation }) => {
   const { busses, selectBus } = useBus();
 
   const handleBusClick = (id) => {
@@ -133,4 +133,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default searchTrackingBus;
+export default SearchTrackingBus;

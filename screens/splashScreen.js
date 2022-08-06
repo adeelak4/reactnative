@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, Dimensions, StyleSheet, StatusBar, Image, Animated } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import useSocket from "./../hooks/useSocket";
+import useSocket from "../hooks/useSocket";
 import useBus from "../hooks/useBus";
 
 const SplashScreen = ({ navigation }) => {
@@ -18,10 +18,10 @@ const SplashScreen = ({ navigation }) => {
 
       <View style={styles.footer}>
         <Text style={styles.title}>Stay connected with everyone!</Text>
-        <Text style={styles.text}>Sign in with account</Text>
+        {/* <Text style={styles.text}>Sign in with account</Text> */}
 
         <View style={styles.button}>
-          <TouchableOpacity onPress={() => navigation.navigate("login")}>
+          <TouchableOpacity onPress={() => navigation.navigate("home")}>
             <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.signIn}>
               <Text style={styles.textSign}>Get Started </Text>
               <Ionicons name="arrow-forward" color="#fff" size={20} />

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Ionicon from "@expo/vector-icons/Feather";
 import useBus from "../hooks/useBus";
 
-const busSchedule = ({ navigation, route }) => {
+const BusSchedule = ({ navigation, route }) => {
   const { busses } = useBus();
 
   const id = route.params.busId;
@@ -55,7 +55,7 @@ const busSchedule = ({ navigation, route }) => {
   );
 };
 
-export default busSchedule;
+export default BusSchedule;
 
 const styles = StyleSheet.create({
   textBox: {
