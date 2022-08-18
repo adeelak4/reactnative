@@ -9,38 +9,38 @@ import * as Location from "expo-location";
 const TrackLocation = ({ navigator }) => {
   const { location, selectedName } = useBus();
   const [coordinates, setCoordinates] = React.useState([67.1154, 24.9455]);
-  const [myLocation, setMyLocation] = React.useState([1, 1]);
+  // const [myLocation, setMyLocation] = React.useState([1, 1]);
 
-  const myPlace = {
-    type: "FeatureCollection",
-    features: [
-      {
-        type: "Feature",
-        properties: {},
-        geometry: {
-          type: "Point",
-          coordinates: coordinates,
-        },
-      },
-    ],
-  };
+  // const myPlace = {
+  //   type: "FeatureCollection",
+  //   features: [
+  //     {
+  //       type: "Feature",
+  //       properties: {},
+  //       geometry: {
+  //         type: "Point",
+  //         coordinates: coordinates,
+  //       },
+  //     },
+  //   ],
+  // };
 
-  const getLocation = async () => {
-    let { status } = await Location.requestForegroundPermissionsAsync();
-    if (status !== "granted") {
-      return;
-    }
-    let location = await Location.getCurrentPositionAsync({});
-    setMyLocation([location.coords.longitude, location.coords.latitude]);
-  };
+  // const getLocation = React.useCallback(async () => {
+  //   let { status } = await Location.requestForegroundPermissionsAsync();
+  //   if (status !== "granted") {
+  //     return;
+  //   }
+  //   let location = await Location.getCurrentPositionAsync({});
+  //   setMyLocation([location.coords.longitude, location.coords.latitude]);
+  // }, [setMyLocation]);
 
   React.useEffect(() => {
     setCoordinates([Number(location?.longitude) || 67.1154, Number(location?.latitude) || 24.9455]);
   }, [location]);
 
-  React.useEffect(() => {
-    setInterval(() => getLocation(), 1000);
-  }, []);
+  // React.useEffect(() => {
+  //   setInterval(() => getLocation(), 1000);
+  // }, [getLocation]);
 
   return (
     <View>
