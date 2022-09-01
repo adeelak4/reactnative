@@ -39,7 +39,11 @@ const SearchSchedule = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/bus.png")} style={styles.logo} resizeMode="stretch" />
+        <Image
+          source={require("../assets/icon.png")}
+          style={styles.logo}
+          resizeMode="stretch"
+        />
       </View>
 
       <View style={styles.footer}>
@@ -62,7 +66,11 @@ const SearchSchedule = ({ navigation }) => {
         </View>
 
         <View style={styles.footerImage}>
-          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
+          <Image
+            source={require("../assets/footerImages.png")}
+            style={styles.footerImg}
+            resizeMode="stretch"
+          />
         </View>
       </View>
     </View>
@@ -99,7 +107,7 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoCondensed_400Regular",
   },
   logo: {
-    width: 150,
+    width: 100,
     height: 100,
   },
   logos: {

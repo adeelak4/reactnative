@@ -1,5 +1,14 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Dimensions, StyleSheet, StatusBar, Image, Animated } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Dimensions,
+  StyleSheet,
+  StatusBar,
+  Image,
+  Animated,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import useSocket from "../hooks/useSocket";
@@ -13,7 +22,11 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Animated.View style={styles.header}>
-        <Image source={require("../assets/bus.png")} style={styles.logo} resizeMode="stretch" />
+        <Image
+          source={require("../assets/icon.png")}
+          style={styles.logo}
+          resizeMode="stretch"
+        />
       </Animated.View>
 
       <View style={styles.footer}>
@@ -22,7 +35,10 @@ const SplashScreen = ({ navigation }) => {
 
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigation.navigate("home")}>
-            <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.signIn}>
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.signIn}
+            >
               <Text style={styles.textSign}>Get Started </Text>
               <Ionicons name="arrow-forward" color="#fff" size={20} />
             </LinearGradient>
@@ -57,7 +73,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   logo: {
-    width: 300,
+    width: 200,
     height: height_logo,
   },
   title: {

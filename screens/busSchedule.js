@@ -15,7 +15,11 @@ const BusSchedule = ({ navigation, route }) => {
 
   return (
     <View>
-      <Image source={require("../assets/bus.png")} style={StyleSheet.absoluteFillObject} blurRadius={70} />
+      <Image
+        source={require("../assets/bus.png")}
+        style={StyleSheet.absoluteFillObject}
+        blurRadius={70}
+      />
       <Text style={styles.Centertitle}>ROUTE OF YOUR</Text>
 
       <View style={styles.texthead}>
@@ -49,7 +53,11 @@ const BusSchedule = ({ navigation, route }) => {
       />
 
       <View style={styles.footerImage}>
-        <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
+        <Image
+          source={require("../assets/footerImages.png")}
+          style={styles.footerImg}
+          resizeMode="stretch"
+        />
       </View>
     </View>
   );

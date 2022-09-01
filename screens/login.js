@@ -34,7 +34,11 @@ const login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/bus.png")} style={styles.logo} resizeMode="stretch" />
+        <Image
+          source={require("../assets/icon.png")}
+          style={styles.logo}
+          resizeMode="stretch"
+        />
       </View>
 
       <View style={styles.footer}>
@@ -43,7 +47,11 @@ const login = ({ navigation }) => {
         <Text style={styles.text_footer}>Email </Text>
         <View style={styles.action}>
           <AntDesign name="user" color="#009387" size={20} />
-          <TextInput placeholder="your email" style={styles.textInput} autoCapitalize="none" />
+          <TextInput
+            placeholder="your email"
+            style={styles.textInput}
+            autoCapitalize="none"
+          />
           <Ionicons name="checkmark-circle-outline" color="#009387" size={20} />
         </View>
 
@@ -68,7 +76,10 @@ const login = ({ navigation }) => {
 
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigation.navigate("home")}>
-            <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.signIn}>
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.signIn}
+            >
               <Text style={styles.textSign}>Sign In </Text>
               <Ionicons name="arrow-forward" color="#fff" size={20} />
             </LinearGradient>
@@ -76,7 +87,11 @@ const login = ({ navigation }) => {
         </View>
 
         <View style={styles.footerImage}>
-          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
+          <Image
+            source={require("../assets/footerImages.png")}
+            style={styles.footerImg}
+            resizeMode="stretch"
+          />
         </View>
       </View>
     </View>

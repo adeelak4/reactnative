@@ -9,6 +9,7 @@ import {
   Image,
   Animated,
   TextInput,
+  FlatList,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -17,10 +18,7 @@ import Menu from "./Menu";
 import Icon from "../assets/trackinfo.png";
 import Icon2 from "../assets/footerImages.png";
 
-const Home = ({ navigation }) => {
-  // let icon = {
-  //   uri: "../assets/trackinfo.png",
-  // };
+const DriverInfo = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -37,34 +35,20 @@ const Home = ({ navigation }) => {
             colors={["#08d4c4", "#01ab9d"]}
             style={styles.Btn_style}
           >
-            <TouchableOpacity
-              style={styles.tch_opacity}
-              activeOpacity={0.9}
-              onPress={() => navigation.navigate("searchTrackingBus")}
-            >
+            <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
               <Image
-                source={require("../assets/tracking.png")}
+                source={require("../assets/profile1.png")}
                 style={styles.logos}
                 resizeMode="stretch"
               />
-              <Text style={styles.title}>BUS TRACKING</Text>
-            </TouchableOpacity>
-          </LinearGradient>
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
-            <TouchableOpacity
-              style={styles.tch_opacity}
-              activeOpacity={0.9}
-              onPress={() => navigation.navigate("searchSchedule")}
-            >
-              <Image
-                source={require("../assets/trackinfo.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
-              <Text style={styles.title}>BUS SCHEDULE</Text>
+              <view>
+                <Text style={styles.title}>NOOR BHAI</Text>
+                <br></br>
+                <Text style={styles.title1}>03333986721</Text>
+                <br></br>
+                <Text style={styles.title1}>Route: Steel Town</Text>
+                <br></br>
+              </view>
             </TouchableOpacity>
           </LinearGradient>
 
@@ -72,17 +56,20 @@ const Home = ({ navigation }) => {
             colors={["#08d4c4", "#01ab9d"]}
             style={styles.Btn_style}
           >
-            <TouchableOpacity
-              style={styles.tch_opacity}
-              activeOpacity={0.9}
-              onPress={() => navigation.navigate("driverInfo")}
-            >
+            <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
               <Image
-                source={require("../assets/driver info.png")}
+                source={require("../assets/profille2.png")}
                 style={styles.logos}
                 resizeMode="stretch"
               />
-              <Text style={styles.title}>DRIVER INFO</Text>
+              <view>
+                <Text style={styles.title}>RAFIQ GUJJAR</Text>
+                <br></br>
+                <Text style={styles.title1}>03334566721</Text>
+                <br></br>
+                <Text style={styles.title1}>Route: KORANGI</Text>
+                <br></br>
+              </view>
             </TouchableOpacity>
           </LinearGradient>
 
@@ -90,17 +77,20 @@ const Home = ({ navigation }) => {
             colors={["#08d4c4", "#01ab9d"]}
             style={styles.Btn_style}
           >
-            <TouchableOpacity
-              style={styles.tch_opacity}
-              activeOpacity={0.9}
-              onPress={() => navigation.navigate("searchSchedule")}
-            >
+            <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
               <Image
-                source={require("../assets/far from me.png")}
+                source={require("../assets/profille3.png")}
                 style={styles.logos}
                 resizeMode="stretch"
               />
-              <Text style={styles.title}>NEAR BY</Text>
+              <view>
+                <Text style={styles.title}>ARIF BHATTI</Text>
+                <br></br>
+                <Text style={styles.title1}>0334536721</Text>
+                <br></br>
+                <Text style={styles.title1}>Route: NAZIMABAD</Text>
+                <br></br>
+              </view>
             </TouchableOpacity>
           </LinearGradient>
 
@@ -108,37 +98,28 @@ const Home = ({ navigation }) => {
             colors={["#08d4c4", "#01ab9d"]}
             style={styles.Btn_style}
           >
-            <TouchableOpacity
-              style={styles.tch_opacity}
-              activeOpacity={0.9}
-              onPress={() => navigation.navigate("contact")}
-            >
+            <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
               <Image
-                source={require("../assets/contact us.png")}
+                source={require("../assets/profille2.png")}
                 style={styles.logos}
                 resizeMode="stretch"
               />
-              <Text style={styles.title}>CONTACT US</Text>
+              <view>
+                <Text style={styles.title}>AKBAR BROHI</Text>
+                <br></br>
+                <Text style={styles.title1}>03334567775</Text>
+                <br></br>
+                <Text style={styles.title1}>Route: DEFENCE</Text>
+                <br></br>
+              </view>
             </TouchableOpacity>
           </LinearGradient>
-
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
-            <TouchableOpacity
-              style={styles.tch_opacity}
-              activeOpacity={0.9}
-              onPress={() => navigation.navigate("about")}
-            >
-              <Image
-                source={require("../assets/trackinfo.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
-              <Text style={styles.title}>ABOUT</Text>
-            </TouchableOpacity>
-          </LinearGradient>
+          {/* <Text style={styles.textStyle}> mehmood bhai </Text>
+          <Text> 03333538499</Text>
+          <Image
+            source={require("../assets/profile1.png")}
+            style={{ width: 60, height: 60, borderRadius: 30 }}
+          /> */}
         </View>
         <View style={styles.footerImage}>
           <Image
@@ -175,13 +156,12 @@ const styles = StyleSheet.create({
     paddingVertical: "5%",
   },
   wraper: {
-    flexDirection: "row",
     flex: 1,
-    flexWrap: "wrap",
+    alignItems: "center",
+    flexDirection: "column",
+    margin: 4,
     gap: "1rem",
     alignItems: "center",
-    justifyContent: "center",
-    margin: 4,
   },
   text_footer: {
     marginTop: 10,
@@ -195,8 +175,21 @@ const styles = StyleSheet.create({
     height: 100,
   },
   logos: {
-    width: 90,
-    height: 90,
+    width: 100,
+    height: 100,
+  },
+  textStyle: {
+    fontSize: 20,
+    padding: 30,
+
+    margin: 20,
+    color: "white",
+  },
+  listStyle: {
+    flexDirection: "column",
+    textAlign: "center",
+    margin: 20,
+    padding: 10,
   },
   footerImage: {
     justifyContent: "flex-end",
@@ -245,31 +238,31 @@ const styles = StyleSheet.create({
   Btn_style: {
     borderRadius: 30,
     flexDirection: "column",
-    width: 170,
-    height: 110,
+    width: 320,
+    height: 100,
     margin: 0,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 10,
     },
+
     shadowOpacity: 0.4,
     shadowRadius: 20,
     zIndex: 999,
     elevation: 7,
-    width: 170,
-    height: 125,
     alignItems: "center",
+    justifyContent: "center",
   },
   tch_opacity: {
     alignItems: "center",
     borderRadius: 30,
-    flexDirection: "column",
-    width: 160,
+    flexDirection: "row",
+    width: 310,
     backgroundColor: "white",
-    height: 125,
+    height: 100,
     margin: 0,
+    justifyContent: "center",
   },
 });
-
-export default Home;
+export default DriverInfo;

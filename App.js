@@ -7,12 +7,15 @@ import SplashScreen from "./screens/SplashScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
+import DriverInfo from "./screens/DriverInfo";
+import About from "./screens/about";
+// import Menu from "./screens/Menu";
 import SearchTrackingBus from "./screens/SearchTrackingBus";
 import SearchSchedule from "./screens/SearchSchedule";
 import TrackLocation from "./screens/TrackLocation";
 import BusSchedule from "./screens/BusSchedule";
 import { RecoilRoot } from "recoil";
-
+import Contact from "./screens/contact";
 const Stack = createNativeStackNavigator();
 
 import {
@@ -48,14 +51,39 @@ export default function App() {
           />
           {/* <Stack.Screen
             name="login"
-            component={login}
+            component={Test}
             options={{ headerTitle: "LOG IN", headerTitleAlign: "center" }}
           /> */}
-          <Stack.Screen name="home" component={Home} options={{ headerTitle: "HOME", headerTitleAlign: "center" }} />
+          <Stack.Screen
+            name="home"
+            component={Home}
+            options={{ headerTitle: "HOME", headerTitleAlign: "center" }}
+          />
+          <Stack.Screen
+            name="contact"
+            component={Contact}
+            options={{ headerTitle: "CONTACT US", headerTitleAlign: "center" }}
+          />
+          <Stack.Screen
+            name="driverInfo"
+            component={DriverInfo}
+            options={{ headerTitle: "DRIVER INFO", headerTitleAlign: "center" }}
+          />
+          {/* <Stack.Screen
+            name="menu"
+            component={Menu}
+            options={{ headerTitle: "Meuu", headerTitleAlign: "center" }}
+          /> */}
+
           <Stack.Screen
             name="searchTrackingBus"
             component={SearchTrackingBus}
             options={{ headerTitle: "BUS LIST", headerTitleAlign: "center" }}
+          />
+          <Stack.Screen
+            name="about"
+            component={About}
+            options={{ headerTitle: "ABOUT US", headerTitleAlign: "center" }}
           />
           <Stack.Screen
             name="searchSchedule"
@@ -65,12 +93,18 @@ export default function App() {
           <Stack.Screen
             name="trackLocation"
             component={TrackLocation}
-            options={{ headerTitle: "TRACK LOCATION", headerTitleAlign: "center" }}
+            options={{
+              headerTitle: "TRACK LOCATION",
+              headerTitleAlign: "center",
+            }}
           />
           <Stack.Screen
             name="busSchedule"
             component={BusSchedule}
-            options={{ headerTitle: "BUS SCHEDULE", headerTitleAlign: "center" }}
+            options={{
+              headerTitle: "BUS SCHEDULE",
+              headerTitleAlign: "center",
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
