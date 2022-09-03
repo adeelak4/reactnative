@@ -27,7 +27,7 @@ const About = ({ navigation }) => {
       <View style={styles.footer}>
         <View style={styles.wraper}>
           <Text style={{ fontSize: 24, fontWeight: "bold" }}>About this app</Text>
-          <Text style={{ marginTop: 10 }}>
+          <Text style={{ marginTop: 10, color: "rgba(0,0,0,0.5)" }}>
             This application tracks the real-time location of the bus through a hardware electronic device with the
             server installed in it which makes the user find their respective bus location and the distance between them
             to make sure that your required bus is registered in the list of this app also this app takes permission for

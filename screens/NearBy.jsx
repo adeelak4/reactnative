@@ -7,7 +7,7 @@ import BusMarker from "../assets/bus_marker.png";
 import * as Location from "expo-location";
 import MapViewDirections from "react-native-maps-directions";
 import { MAPS_API } from "./../util/constants";
-
+var count = 0;
 const NearBy = ({ navigator }) => {
   const { busses } = useBus();
   const [destination, setDestination] = React.useState();
@@ -22,7 +22,7 @@ const NearBy = ({ navigator }) => {
       coords: { longitude, latitude },
     } = await Location.getCurrentPositionAsync({});
     setMyLocation({ longitude, latitude });
-  }, [setMyLocation]);
+  }, []);
 
   // React.useEffect(() => {
   //   setCoordinates([Number(location?.longitude) || 67.1154, Number(location?.latitude) || 24.9455]);
@@ -63,7 +63,6 @@ const NearBy = ({ navigator }) => {
           strokeWidth={4}
           strokeColor="#0096FF"
         />
-
         {busses.map(({ location: { latitude, longitude }, name }, i) => {
           return (
             <Marker

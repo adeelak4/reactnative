@@ -17,21 +17,43 @@ import { AntDesign } from "@expo/vector-icons";
 import Menu from "./Menu";
 import Icon from "../assets/trackinfo.png";
 import Icon2 from "../assets/footerImages.png";
+import api from "../util/api";
 
 const Contact = ({ navigation }) => {
   const [name, setName] = React.useState("");
   const [mobile, setMobile] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [msg, setMsg] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
 
-  const handleSubmit = () => {
-    let obj = {
-      name,
-      mobile,
-      email,
-      msg,
-    };
-    console.log(obj);
+  const handleSubmit = async () => {
+    try {
+      if (!name || !email) {
+        alert("Please fill all fields.");
+        return;
+      }
+      setLoading(true);
+      let obj = {
+        name,
+        mobile,
+        email,
+        message: msg,
+      };
+      let res = await api.post("/api/v1/contact", obj);
+      if (res.data.status) {
+        alert("Thanks for your feedback!");
+        setName("");
+        setMobile("");
+        setEmail("");
+        setMsg("");
+      } else {
+        alert("Error occured while sending message");
+      }
+    } catch (error) {
+      alert("Error occured while sending message");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -99,8 +121,11 @@ const Contact = ({ navigation }) => {
             </View>
 
             <View style={styles.button}>
-              <TouchableOpacity onPress={handleSubmit}>
-                <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.signIn}>
+              <TouchableOpacity onPress={handleSubmit} disabled={loading}>
+                <LinearGradient
+                  colors={loading ? ["#e0e0e0", "#EEEEEE"] : ["#08d4c4", "#01ab9d"]}
+                  style={styles.signIn}
+                >
                   <Text style={styles.textSign}> Submit </Text>
                   <Ionicons name="arrow-forward" color="#fff" size={20} />
                 </LinearGradient>
