@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Dimensions,
-  StyleSheet,
-  Image,
-  Animated,
-} from "react-native";
-import BusList from "../src/components/busList";
+import { View, Text, TouchableOpacity, Dimensions, StyleSheet, Image, Animated } from "react-native";
+import BusList from "../src/components/BusList";
 import Ionicon from "@expo/vector-icons/Feather";
 import useBus from "../hooks/useBus";
 
@@ -23,11 +15,7 @@ const SearchTrackingBus = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </View>
 
       <View style={styles.footer}>
@@ -50,11 +38,7 @@ const SearchTrackingBus = ({ navigation }) => {
         </View>
 
         <View style={styles.footerImage}>
-          <Image
-            source={require("../assets/footerImages.png")}
-            style={styles.footerImg}
-            resizeMode="stretch"
-          />
+          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
         </View>
       </View>
     </View>

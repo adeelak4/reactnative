@@ -13,23 +13,13 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { AntDesign } from "@expo/vector-icons";
-import BusList from "../src/components/busList";
+import BusList from "../src/components/BusList";
 import Ionicon from "@expo/vector-icons/Feather";
 import useBus from "../hooks/useBus";
+import * as Random from "expo-random";
 
 const SearchSchedule = ({ navigation }) => {
   const { busses, selectBus } = useBus();
-  console.log(busses);
-
-  // const timingAlert = () =>
-  // Alert.alert('Alert Title', 'My Alert Msg', [
-  //   {
-  //     text: 'Cancel',
-  //     onPress: () => console.log('Cancel Pressed'),
-  //     style: 'cancel',
-  //   },
-  //   { text: 'OK', onPress: () => console.log('OK Pressed') },
-  // ]);
   const handleBusClick = (id) => {
     navigation.navigate("busSchedule", {
       busId: id,
@@ -39,11 +29,7 @@ const SearchSchedule = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </View>
 
       <View style={styles.footer}>
@@ -51,7 +37,7 @@ const SearchSchedule = ({ navigation }) => {
         <View style={styles.item}>
           {busses.map((item, i) => (
             <TouchableOpacity
-              key={i}
+              key={Random.getRandomBytes(2).join("")}
               style={styles.touchBox}
               onPress={() => {
                 handleBusClick(item._id);
@@ -66,11 +52,7 @@ const SearchSchedule = ({ navigation }) => {
         </View>
 
         <View style={styles.footerImage}>
-          <Image
-            source={require("../assets/footerImages.png")}
-            style={styles.footerImg}
-            resizeMode="stretch"
-          />
+          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
         </View>
       </View>
     </View>

@@ -9,6 +9,7 @@ import {
   Image,
   Animated,
   TextInput,
+  KeyboardAvoidingView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -17,15 +18,26 @@ import Menu from "./Menu";
 import Icon from "../assets/trackinfo.png";
 import Icon2 from "../assets/footerImages.png";
 
-const contact = ({ navigation }) => {
+const Contact = ({ navigation }) => {
+  const [name, setName] = React.useState("");
+  const [mobile, setMobile] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [msg, setMsg] = React.useState("");
+
+  const handleSubmit = () => {
+    let obj = {
+      name,
+      mobile,
+      email,
+      msg,
+    };
+    console.log(obj);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </View>
 
       <View style={styles.footer}>
@@ -37,61 +49,58 @@ const contact = ({ navigation }) => {
             <View style={styles.action}>
               <AntDesign name="user" color="#009387" size={20} />
               <TextInput
-                placeholder="your email"
+                placeholder="Your Name"
+                textContentType="name"
                 style={styles.textInput}
                 autoCapitalize="none"
+                value={name}
+                onChangeText={(text) => setName(text)}
               />
-              <Ionicons
-                name="checkmark-circle-outline"
-                color="#009387"
-                size={20}
-              />
+              <Ionicons name="checkmark-circle-outline" color="#009387" size={20} />
             </View>
 
             <Text style={styles.text_footer}>mobile </Text>
             <View style={styles.action}>
               <AntDesign name="mobile1" color="#009387" size={20} />
               <TextInput
-                placeholder="your email"
+                placeholder="You Mobile"
+                textContentType="telephoneNumber"
                 style={styles.textInput}
+                value={mobile}
+                onChangeText={(text) => setMobile(text)}
                 autoCapitalize="none"
               />
-              <Ionicons
-                name="checkmark-circle-outline"
-                color="#009387"
-                size={20}
-              />
+              <Ionicons name="checkmark-circle-outline" color="#009387" size={20} />
             </View>
 
             <Text style={styles.text_footer}>Email </Text>
             <View style={styles.action}>
               <AntDesign name="mail" color="#009387" size={20} />
               <TextInput
-                placeholder="your email"
+                placeholder="Your Email"
+                textContentType="emailAddress"
                 style={styles.textInput}
                 autoCapitalize="none"
+                value={email}
+                onChangeText={(text) => setEmail(text)}
               />
-              <Ionicons
-                name="checkmark-circle-outline"
-                color="#009387"
-                size={20}
-              />
+              <Ionicons name="checkmark-circle-outline" color="#009387" size={20} />
             </View>
             <Text style={styles.text_footer}>Your Text Messege </Text>
             <View style={styles.action}>
               <TextInput
-                placeholder="your email"
+                placeholder="Your Message"
                 style={styles.textInputs}
+                multiline
                 autoCapitalize="none"
+                value={msg}
+                onChangeText={(text) => setMsg(text)}
               />
             </View>
 
             <View style={styles.button}>
-              <TouchableOpacity onPress={() => navigation.navigate("")}>
-                <LinearGradient
-                  colors={["#08d4c4", "#01ab9d"]}
-                  style={styles.signIn}
-                >
+              <TouchableOpacity onPress={handleSubmit}>
+                <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.signIn}>
                   <Text style={styles.textSign}> Submit </Text>
                   <Ionicons name="arrow-forward" color="#fff" size={20} />
                 </LinearGradient>
@@ -99,13 +108,9 @@ const contact = ({ navigation }) => {
             </View>
           </View>
         </View>
-        <View style={styles.footerImage}>
-          <Image
-            source={require("../assets/footerImages.png")}
-            style={styles.footerImg}
-            resizeMode="stretch"
-          />
-        </View>
+        {/* <View style={styles.footerImage}>
+          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
+        </View> */}
       </View>
     </View>
   );
@@ -241,4 +246,4 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 });
-export default contact;
+export default Contact;

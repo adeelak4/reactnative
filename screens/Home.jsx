@@ -24,128 +24,78 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </View>
 
       <View style={styles.footer}>
         <View style={styles.wraper}>
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity
               style={styles.tch_opacity}
               activeOpacity={0.9}
               onPress={() => navigation.navigate("searchTrackingBus")}
             >
-              <Image
-                source={require("../assets/tracking.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
+              <Image source={require("../assets/tracking.png")} style={styles.logos} resizeMode="stretch" />
               <Text style={styles.title}>BUS TRACKING</Text>
             </TouchableOpacity>
           </LinearGradient>
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity
               style={styles.tch_opacity}
               activeOpacity={0.9}
               onPress={() => navigation.navigate("searchSchedule")}
             >
-              <Image
-                source={require("../assets/trackinfo.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
+              <Image source={require("../assets/trackinfo.png")} style={styles.logos} resizeMode="stretch" />
               <Text style={styles.title}>BUS SCHEDULE</Text>
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity
               style={styles.tch_opacity}
               activeOpacity={0.9}
               onPress={() => navigation.navigate("driverInfo")}
             >
-              <Image
-                source={require("../assets/driver info.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
+              <Image source={require("../assets/driver_info.png")} style={styles.logos} resizeMode="stretch" />
               <Text style={styles.title}>DRIVER INFO</Text>
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity
               style={styles.tch_opacity}
               activeOpacity={0.9}
               onPress={() => navigation.navigate("searchSchedule")}
             >
-              <Image
-                source={require("../assets/far from me.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
+              <Image source={require("../assets/far_from_me.png")} style={styles.logos} resizeMode="stretch" />
               <Text style={styles.title}>NEAR BY</Text>
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity
               style={styles.tch_opacity}
               activeOpacity={0.9}
               onPress={() => navigation.navigate("contact")}
             >
-              <Image
-                source={require("../assets/contact us.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
+              <Image source={require("../assets/contact_us.png")} style={styles.logos} resizeMode="stretch" />
               <Text style={styles.title}>CONTACT US</Text>
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity
               style={styles.tch_opacity}
               activeOpacity={0.9}
               onPress={() => navigation.navigate("about")}
             >
-              <Image
-                source={require("../assets/trackinfo.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
+              <Image source={require("../assets/trackinfo.png")} style={styles.logos} resizeMode="stretch" />
               <Text style={styles.title}>ABOUT</Text>
             </TouchableOpacity>
           </LinearGradient>
         </View>
         <View style={styles.footerImage}>
-          <Image
-            source={require("../assets/footerImages.png")}
-            style={styles.footerImg}
-            resizeMode="stretch"
-          />
+          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
         </View>
       </View>
     </View>

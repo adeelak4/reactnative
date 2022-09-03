@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, FlatList, Props, Image } from "react-native";
 import React, { Component } from "react";
 import Ionicon from "@expo/vector-icons/Feather";
 import useBus from "../hooks/useBus";
+import * as Random from "expo-random";
 
 const BusSchedule = ({ navigation, route }) => {
   const { busses } = useBus();
@@ -15,11 +16,7 @@ const BusSchedule = ({ navigation, route }) => {
 
   return (
     <View>
-      <Image
-        source={require("../assets/bus.png")}
-        style={StyleSheet.absoluteFillObject}
-        blurRadius={70}
-      />
+      <Image source={require("../assets/bus.png")} style={StyleSheet.absoluteFillObject} blurRadius={70} />
       <Text style={styles.Centertitle}>ROUTE OF YOUR</Text>
 
       <View style={styles.texthead}>
@@ -30,10 +27,10 @@ const BusSchedule = ({ navigation, route }) => {
         scrollEnabled={true}
         style={styles.flat}
         keyExtractor={(key) => {
-          return key.index;
+          return Random.getRandomBytes(2).join("");
         }}
         data={selectedBus.route}
-        renderItem={({ item }) => {
+        renderItem={({ item, i }) => {
           return (
             <View>
               <Text style={styles.CenterBar}>
@@ -53,11 +50,7 @@ const BusSchedule = ({ navigation, route }) => {
       />
 
       <View style={styles.footerImage}>
-        <Image
-          source={require("../assets/footerImages.png")}
-          style={styles.footerImg}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
       </View>
     </View>
   );

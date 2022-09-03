@@ -2,20 +2,22 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Test from "./src/components/LogIn";
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
+
+import * as AppSplashScreen from "expo-splash-screen";
 import SplashScreen from "./screens/SplashScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
 import DriverInfo from "./screens/DriverInfo";
-import About from "./screens/about";
+import About from "./screens/About";
 // import Menu from "./screens/Menu";
 import SearchTrackingBus from "./screens/SearchTrackingBus";
 import SearchSchedule from "./screens/SearchSchedule";
 import TrackLocation from "./screens/TrackLocation";
 import BusSchedule from "./screens/BusSchedule";
 import { RecoilRoot } from "recoil";
-import Contact from "./screens/contact";
+import Contact from "./screens/Contact";
+
 const Stack = createNativeStackNavigator();
 
 import {
@@ -26,6 +28,7 @@ import {
   RobotoCondensed_700Bold,
   RobotoCondensed_700Bold_Italic,
 } from "@expo-google-fonts/roboto-condensed";
+import React from "react";
 
 export default function App() {
   let [fontsLoad] = useFonts({
@@ -36,9 +39,22 @@ export default function App() {
     RobotoCondensed_700Bold,
     RobotoCondensed_700Bold_Italic,
   });
-  if (!fontsLoad) {
-    return <AppLoading />;
-  }
+
+  React.useEffect(() => {
+    const fn = async () => {
+      await AppSplashScreen.preventAutoHideAsync();
+    };
+    fn();
+  }, []);
+
+  React.useEffect(() => {
+    const fn = async () => {
+      await AppSplashScreen.hideAsync();
+    };
+    if (fontsLoad) {
+      fn();
+    }
+  }, [fontsLoad]);
 
   return (
     <RecoilRoot>
@@ -54,11 +70,7 @@ export default function App() {
             component={Test}
             options={{ headerTitle: "LOG IN", headerTitleAlign: "center" }}
           /> */}
-          <Stack.Screen
-            name="home"
-            component={Home}
-            options={{ headerTitle: "HOME", headerTitleAlign: "center" }}
-          />
+          <Stack.Screen name="home" component={Home} options={{ headerTitle: "HOME", headerTitleAlign: "center" }} />
           <Stack.Screen
             name="contact"
             component={Contact}

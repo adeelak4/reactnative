@@ -22,96 +22,52 @@ const DriverInfo = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </View>
 
       <View style={styles.footer}>
         <View style={styles.wraper}>
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image
-                source={require("../assets/profile1.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
-              <view>
+              <Image source={require("../assets/profile1.png")} style={styles.logos} resizeMode="stretch" />
+              <View>
                 <Text style={styles.title}>NOOR BHAI</Text>
-                <br></br>
                 <Text style={styles.title1}>03333986721</Text>
-                <br></br>
                 <Text style={styles.title1}>Route: Steel Town</Text>
-                <br></br>
-              </view>
+              </View>
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image
-                source={require("../assets/profille2.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
-              <view>
+              <Image source={require("../assets/profille2.png")} style={styles.logos} resizeMode="stretch" />
+              <View>
                 <Text style={styles.title}>RAFIQ GUJJAR</Text>
-                <br></br>
                 <Text style={styles.title1}>03334566721</Text>
-                <br></br>
                 <Text style={styles.title1}>Route: KORANGI</Text>
-                <br></br>
-              </view>
+              </View>
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image
-                source={require("../assets/profille3.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
-              <view>
+              <Image source={require("../assets/profille3.png")} style={styles.logos} resizeMode="stretch" />
+              <View>
                 <Text style={styles.title}>ARIF BHATTI</Text>
-                <br></br>
                 <Text style={styles.title1}>0334536721</Text>
-                <br></br>
                 <Text style={styles.title1}>Route: NAZIMABAD</Text>
-                <br></br>
-              </view>
+              </View>
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient
-            colors={["#08d4c4", "#01ab9d"]}
-            style={styles.Btn_style}
-          >
+          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
             <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image
-                source={require("../assets/profille2.png")}
-                style={styles.logos}
-                resizeMode="stretch"
-              />
-              <view>
+              <Image source={require("../assets/profille2.png")} style={styles.logos} resizeMode="stretch" />
+              <View>
                 <Text style={styles.title}>AKBAR BROHI</Text>
-                <br></br>
                 <Text style={styles.title1}>03334567775</Text>
-                <br></br>
                 <Text style={styles.title1}>Route: DEFENCE</Text>
-                <br></br>
-              </view>
+              </View>
             </TouchableOpacity>
           </LinearGradient>
           {/* <Text style={styles.textStyle}> mehmood bhai </Text>
@@ -122,11 +78,7 @@ const DriverInfo = ({ navigation }) => {
           /> */}
         </View>
         <View style={styles.footerImage}>
-          <Image
-            source={require("../assets/footerImages.png")}
-            style={styles.footerImg}
-            resizeMode="stretch"
-          />
+          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
         </View>
       </View>
     </View>

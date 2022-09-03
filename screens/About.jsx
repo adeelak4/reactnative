@@ -17,49 +17,33 @@ import Menu from "./Menu";
 import Icon from "../assets/trackinfo.png";
 import Icon2 from "../assets/footerImages.png";
 
-const about = ({ navigation }) => {
+const About = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </View>
 
       <View style={styles.footer}>
         <View style={styles.wraper}>
-          <text>
-            <h3>About this app </h3>
-            <h6>
-              This application tracks the real-time location of the bus through
-              a hardware electronic device with the server installed in it which
-              makes the user find their respective bus location and the distance
-              between them to make sure that your required bus is registered in
-              the list of this app also this app takes permission for the
-              location which user have to allow for efficient usage of this app
-              you can track more than one bus whichever you want according to
-              your routes. We won't use the location for any other purpose, this
-              app will not require any personal detail because the use of this
-              app is completely free for students. User can see their bus
-              schedule and the places where their bus will stop for a while to
-              take students It can also be used for many purposes like tracking
-              stolen phones, monitoring a transport company fleet, coordinating
-              with family members, and so on.Feel free to give your valuable
-              feedback on the contact us page as well For business inquiries
-              Email at: sk903728@gmail.com Team: Saqlain Riaz Saddam Khan Adeel
-              Afzal Usman Qureshi Project
-            </h6>
-            <h4>Instructor: Prof: Dr. Asim Ali</h4>
-          </text>
+          <Text style={{ fontSize: 24, fontWeight: "bold" }}>About this app</Text>
+          <Text style={{ marginTop: 10 }}>
+            This application tracks the real-time location of the bus through a hardware electronic device with the
+            server installed in it which makes the user find their respective bus location and the distance between them
+            to make sure that your required bus is registered in the list of this app also this app takes permission for
+            the location which user have to allow for efficient usage of this app you can track more than one bus
+            whichever you want according to your routes. We won't use the location for any other purpose, this app will
+            not require any personal detail because the use of this app is completely free for students. User can see
+            their bus schedule and the places where their bus will stop for a while to take students It can also be used
+            for many purposes like tracking stolen phones, monitoring a transport company fleet, coordinating with
+            family members, and so on.Feel free to give your valuable feedback on the contact us page as well For
+            business inquiries Email at: sk903728@gmail.com Team: Saqlain Riaz Saddam Khan Adeel Afzal Usman Qureshi
+            Project
+          </Text>
+          <Text style={{ fontSize: 16 }}>Instructor: Prof: Dr. Asim Ali</Text>
         </View>
         <View style={styles.footerImage}>
-          <Image
-            source={require("../assets/footerImages.png")}
-            style={styles.footerImg}
-            resizeMode="stretch"
-          />
+          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
         </View>
       </View>
     </View>
@@ -197,4 +181,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default about;
+export default About;
