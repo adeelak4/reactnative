@@ -65,7 +65,7 @@ const Home = ({ navigation }) => {
             <TouchableOpacity
               style={styles.tch_opacity}
               activeOpacity={0.9}
-              onPress={() => navigation.navigate("searchSchedule")}
+              onPress={() => navigation.navigate("nearBy")}
             >
               <Image source={require("../assets/far_from_me.png")} style={styles.logos} resizeMode="stretch" />
               <Text style={styles.title}>NEAR BY</Text>

@@ -29,6 +29,7 @@ import {
   RobotoCondensed_700Bold_Italic,
 } from "@expo-google-fonts/roboto-condensed";
 import React from "react";
+import NearBy from "./screens/NearBy";
 
 export default function App() {
   let [fontsLoad] = useFonts({
@@ -81,11 +82,6 @@ export default function App() {
             component={DriverInfo}
             options={{ headerTitle: "DRIVER INFO", headerTitleAlign: "center" }}
           />
-          {/* <Stack.Screen
-            name="menu"
-            component={Menu}
-            options={{ headerTitle: "Meuu", headerTitleAlign: "center" }}
-          /> */}
 
           <Stack.Screen
             name="searchTrackingBus"
@@ -107,6 +103,14 @@ export default function App() {
             component={TrackLocation}
             options={{
               headerTitle: "TRACK LOCATION",
+              headerTitleAlign: "center",
+            }}
+          />
+          <Stack.Screen
+            name="nearBy"
+            component={NearBy}
+            options={{
+              headerTitle: "NEARBY BUSES",
               headerTitleAlign: "center",
             }}
           />

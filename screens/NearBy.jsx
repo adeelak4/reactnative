@@ -8,24 +8,10 @@ import * as Location from "expo-location";
 import MapViewDirections from "react-native-maps-directions";
 import { MAPS_API } from "./../util/constants";
 
-const TrackLocation = ({ navigator }) => {
-  const { location, selectedName } = useBus();
-  const [coordinates, setCoordinates] = React.useState([67.1154, 24.9455]);
+const NearBy = ({ navigator }) => {
+  const { busses } = useBus();
+  const [destination, setDestination] = React.useState();
   const [myLocation, setMyLocation] = React.useState();
-
-  // const myPlace = {
-  //   type: "FeatureCollection",
-  //   features: [
-  //     {
-  //       type: "Feature",
-  //       properties: {},
-  //       geometry: {
-  //         type: "Point",
-  //         coordinates: coordinates,
-  //       },
-  //     },
-  //   ],
-  // };
 
   const getLocation = React.useCallback(async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
@@ -38,9 +24,16 @@ const TrackLocation = ({ navigator }) => {
     setMyLocation({ longitude, latitude });
   }, [setMyLocation]);
 
-  React.useEffect(() => {
-    setCoordinates([Number(location?.longitude) || 67.1154, Number(location?.latitude) || 24.9455]);
-  }, [location]);
+  // React.useEffect(() => {
+  //   setCoordinates([Number(location?.longitude) || 67.1154, Number(location?.latitude) || 24.9455]);
+  // }, [location]);
+
+  const handleMarkerClick = ({ latitude, longitude }) => {
+    setDestination({
+      latitude,
+      longitude,
+    });
+  };
 
   React.useEffect(() => {
     setInterval(() => getLocation(), 1000);
@@ -63,31 +56,32 @@ const TrackLocation = ({ navigator }) => {
         }}
       >
         {/* <Geojson geojson={myPlace} strokeColor="red" fillColor="green" strokeWidth={2} title={selectedName} /> */}
-        {/* <MapViewDirections
+        <MapViewDirections
           origin={myLocation}
-          destination={{ latitude: coordinates[1], longitude: coordinates[0] }}
+          destination={destination}
           apikey={MAPS_API}
           strokeWidth={4}
           strokeColor="#0096FF"
-        /> */}
-        <Marker
-          coordinate={{ latitude: coordinates[1], longitude: coordinates[0] }}
-          title={selectedName}
-          description={`Location of ${selectedName}`}
-          image={BusMarker}
         />
-        {/* <Marker
-          coordinate={{ latitude: myLocation[1], longitude: myLocation[0] }}
-          title={"Me"}
-          description={"Your Location"}
-          image={Dot}
-        /> */}
+
+        {busses.map(({ location: { latitude, longitude }, name }, i) => {
+          return (
+            <Marker
+              key={i}
+              onPress={() => handleMarkerClick({ latitude, longitude })}
+              coordinate={{ latitude: Number(latitude), longitude: Number(longitude) }}
+              title={name}
+              description={`Location of ${name}`}
+              image={BusMarker}
+            />
+          );
+        })}
       </MapView>
     </View>
   );
 };
 
-export default TrackLocation;
+export default NearBy;
 
 const styles = StyleSheet.create({
   map: {
