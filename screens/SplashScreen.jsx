@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 200,
-    height: height_logo,
+    height: 200,
   },
   title: {
     color: "#05375a",

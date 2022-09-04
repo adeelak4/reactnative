@@ -22,14 +22,25 @@ const DriverInfo = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
+        <Image
+          source={require("../assets/icon.png")}
+          style={styles.logo}
+          resizeMode="stretch"
+        />
       </View>
 
       <View style={styles.footer}>
         <View style={styles.wraper}>
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
+          <LinearGradient
+            colors={["#08d4c4", "#01ab9d"]}
+            style={styles.Btn_style}
+          >
             <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image source={require("../assets/profile1.png")} style={styles.logos} resizeMode="stretch" />
+              <Image
+                source={require("../assets/profile1.png")}
+                style={styles.logos}
+                resizeMode="stretch"
+              />
               <View>
                 <Text style={styles.title}>NOOR BHAI</Text>
                 <Text style={styles.title1}>03333986721</Text>
@@ -38,9 +49,16 @@ const DriverInfo = ({ navigation }) => {
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
+          <LinearGradient
+            colors={["#08d4c4", "#01ab9d"]}
+            style={styles.Btn_style}
+          >
             <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image source={require("../assets/profille2.png")} style={styles.logos} resizeMode="stretch" />
+              <Image
+                source={require("../assets/profille2.png")}
+                style={styles.logos}
+                resizeMode="stretch"
+              />
               <View>
                 <Text style={styles.title}>RAFIQ GUJJAR</Text>
                 <Text style={styles.title1}>03334566721</Text>
@@ -49,9 +67,16 @@ const DriverInfo = ({ navigation }) => {
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
+          <LinearGradient
+            colors={["#08d4c4", "#01ab9d"]}
+            style={styles.Btn_style}
+          >
             <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image source={require("../assets/profille3.png")} style={styles.logos} resizeMode="stretch" />
+              <Image
+                source={require("../assets/profille3.png")}
+                style={styles.logos}
+                resizeMode="stretch"
+              />
               <View>
                 <Text style={styles.title}>ARIF BHATTI</Text>
                 <Text style={styles.title1}>0334536721</Text>
@@ -60,9 +85,16 @@ const DriverInfo = ({ navigation }) => {
             </TouchableOpacity>
           </LinearGradient>
 
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
+          <LinearGradient
+            colors={["#08d4c4", "#01ab9d"]}
+            style={styles.Btn_style}
+          >
             <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image source={require("../assets/profille2.png")} style={styles.logos} resizeMode="stretch" />
+              <Image
+                source={require("../assets/profille2.png")}
+                style={styles.logos}
+                resizeMode="stretch"
+              />
               <View>
                 <Text style={styles.title}>AKBAR BROHI</Text>
                 <Text style={styles.title1}>03334567775</Text>
@@ -77,9 +109,13 @@ const DriverInfo = ({ navigation }) => {
             style={{ width: 60, height: 60, borderRadius: 30 }}
           /> */}
         </View>
-        <View style={styles.footerImage}>
-          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
-        </View>
+        {/* <View style={styles.footerImage}>
+          <Image
+            source={require("../assets/footerImages.png")}
+            style={styles.footerImg}
+            resizeMode="stretch"
+          />
+        </View> */}
       </View>
     </View>
   );
@@ -205,6 +241,7 @@ const styles = StyleSheet.create({
     elevation: 7,
     alignItems: "center",
     justifyContent: "center",
+    marginTop: 10,
   },
   tch_opacity: {
     alignItems: "center",
