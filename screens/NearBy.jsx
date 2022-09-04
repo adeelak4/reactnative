@@ -4,7 +4,7 @@ import React from "react";
 import Directions from "../src/components/Directions";
 import AllBusesLocation from "../src/components/AllBusesLocation";
 
-const NearBy = ({ navigator }) => {
+const NearBy = () => {
   const [destination, setDestination] = React.useState();
 
   const handleMarkerClick = ({ latitude, longitude }) => {
@@ -22,6 +22,7 @@ const NearBy = ({ navigator }) => {
         showsTraffic={true}
         showsMyLocationButton={true}
         showsScale={true}
+        loadingEnabled={true}
         style={styles.map}
         initialRegion={{
           latitude: 24.9455,

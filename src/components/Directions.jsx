@@ -17,12 +17,12 @@ const Directions = ({ destination }) => {
     setMyLocation({ longitude, latitude });
   }, []);
 
-  React.useEffect(() => {
-    setInterval(() => getLocation(), 1000);
-  }, [getLocation]);
+  // React.useEffect(() => {
+  //   setInterval(() => getLocation(), 1000);
+  // }, [getLocation]);
 
   React.useEffect(() => {
-    console.log("d", destination);
+    getLocation();
   }, [destination]);
 
   return (
@@ -31,6 +31,7 @@ const Directions = ({ destination }) => {
       destination={destination}
       apikey={MAPS_API}
       strokeWidth={4}
+      mode="DRIVING"
       strokeColor="#0096FF"
     />
   );
