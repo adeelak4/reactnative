@@ -1,21 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Dimensions,
-  StyleSheet,
-  StatusBar,
-  Image,
-  Animated,
-  TextInput,
-} from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { AntDesign } from "@expo/vector-icons";
-import Menu from "./Menu";
-import Icon from "../assets/trackinfo.png";
-import Icon2 from "../assets/footerImages.png";
+import { View, Text, Dimensions, StyleSheet, Image } from "react-native";
 
 const About = ({ navigation }) => {
   return (
