@@ -196,8 +196,8 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   footerImg: {
-    width: 190,
-    height: 140,
+    width: 180,
+    height: 130,
   },
 
   title: {
