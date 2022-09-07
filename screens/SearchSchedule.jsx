@@ -9,6 +9,7 @@ import {
   Image,
   Animated,
   TextInput,
+  ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -29,30 +30,40 @@ const SearchSchedule = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
+        <Image
+          source={require("../assets/icon.png")}
+          style={styles.logo}
+          resizeMode="stretch"
+        />
       </View>
 
       <View style={styles.footer}>
         <Text style={styles.sectionTitle}>Select Your Bus</Text>
-        <View style={styles.item}>
-          {busses.map((item, i) => (
-            <TouchableOpacity
-              key={Random.getRandomBytes(2).join("")}
-              style={styles.touchBox}
-              onPress={() => {
-                handleBusClick(item._id);
-              }}
-            >
-              <Ionicon name="map-pin" color="#009387" size={20} />
-              <Text style={styles.touchText}>
-                <BusList Text={item.name} />
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
 
+        <ScrollView contentContainerStyle={styles.contentContainer}>
+          <View style={styles.item}>
+            {busses.map((item, i) => (
+              <TouchableOpacity
+                key={Random.getRandomBytes(2).join("")}
+                style={styles.touchBox}
+                onPress={() => {
+                  handleBusClick(item._id);
+                }}
+              >
+                <Ionicon name="map-pin" color="#009387" size={20} />
+                <Text style={styles.touchText}>
+                  <BusList Text={item.name} />
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
         <View style={styles.footerImage}>
-          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
+          <Image
+            source={require("../assets/footerImages.png")}
+            style={styles.footerImg}
+            resizeMode="stretch"
+          />
         </View>
       </View>
     </View>
@@ -98,11 +109,12 @@ const styles = StyleSheet.create({
   },
   footerImage: {
     justifyContent: "flex-end",
-    alignItems: "center",
+    alignItems: "flex-end",
+    margin: 0,
   },
   footerImg: {
-    width: 240,
-    height: 190,
+    width: 130,
+    height: 90,
   },
   title: {
     color: "#05375a",
@@ -144,6 +156,9 @@ const styles = StyleSheet.create({
   Btn_text: {
     fontSize: 20,
     fontWeight: "300",
+  },
+  contentContainer: {
+    padding: 10,
   },
 });
 

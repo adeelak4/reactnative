@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 
 export default function BusList(props) {
@@ -13,5 +13,8 @@ const styles = StyleSheet.create({
   touchText: {
     fontSize: 16,
     fontWeight: "bold",
+  },
+  contentContainer: {
+    paddingVertical: 10,
   },
 });

@@ -45,8 +45,8 @@ const About = ({ navigation }) => {
             can also be used for many purposes like tracking stolen phones,
             monitoring a transport company fleet, coordinating with family
             members, and so on.Feel free to give your valuable feedback on the
-            contact us page as well For business inquiries Email at:
-            sk903728@gmail.com
+            contact us page as well For business inquiries Email
+            at:sk903728@gmail.com
             <View style={styles.container1}>
               <Text style={{ fontSize: 15 }}>TEAM</Text>
               <FlatList

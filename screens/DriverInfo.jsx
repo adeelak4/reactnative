@@ -93,7 +93,7 @@ const DriverInfo = ({ navigation }) => {
             >
               <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
                 <Image
-                  source={require("../assets/profille2.png")}
+                  source={require("../assets/profile1.png")}
                   style={styles.logos}
                   resizeMode="stretch"
                 />
@@ -129,7 +129,7 @@ const DriverInfo = ({ navigation }) => {
             >
               <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
                 <Image
-                  source={require("../assets/profille2.png")}
+                  source={require("../assets/profile1.png")}
                   style={styles.logos}
                   resizeMode="stretch"
                 />
@@ -165,7 +165,7 @@ const DriverInfo = ({ navigation }) => {
             >
               <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
                 <Image
-                  source={require("../assets/profille2.png")}
+                  source={require("../assets/profile1.png")}
                   style={styles.logos}
                   resizeMode="stretch"
                 />
@@ -244,8 +244,8 @@ const styles = StyleSheet.create({
   logos: {
     width: 90,
     height: 90,
-    marginRight: "10%",
     borderRadius: 60,
+    marginHorizontal: "5%",
   },
   textStyle: {
     fontSize: 20,
@@ -332,7 +332,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: 100,
     margin: 0,
-    justifyContent: "center",
   },
 });
 export default DriverInfo;
