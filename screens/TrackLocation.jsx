@@ -31,15 +31,17 @@ const TrackLocation = ({ navigator }) => {
           strokeWidth={4}
           strokeColor="#0096FF"
         /> */}
-        <Marker
-          coordinate={{
-            latitude: Number(location?.latitude) || 24.9455,
-            longitude: Number(location?.longitude) || 67.1154,
-          }}
-          title={selectedName}
-          description={`Location of ${selectedName}`}
-          image={BusMarker}
-        />
+        {location?.latitude && location?.longitude && (
+          <Marker
+            coordinate={{
+              latitude: Number(location?.latitude),
+              longitude: Number(location?.longitude),
+            }}
+            title={selectedName}
+            description={`Location of ${selectedName}`}
+            image={BusMarker}
+          />
+        )}
         {/* <Marker
           coordinate={{ latitude: myLocation[1], longitude: myLocation[0] }}
           title={"Me"}

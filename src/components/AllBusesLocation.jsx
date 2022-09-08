@@ -7,17 +7,19 @@ const AllBusesLocation = ({ handleMarkerClick }) => {
 
   return (
     <>
-      {busses.map(({ location: { latitude, longitude }, name }, i) => {
-        return (
+      {busses.map((bus, i) => {
+        let latitude = bus.location?.latitude;
+        let longitude = bus.location?.longitude;
+        return latitude && longitude ? (
           <Marker
             key={i}
             onPress={() => handleMarkerClick({ latitude, longitude })}
             coordinate={{ latitude: Number(latitude), longitude: Number(longitude) }}
-            title={name}
-            description={`Location of ${name}`}
+            title={bus.name}
+            description={`Location of ${bus.name}`}
             image={BusMarker}
           />
-        );
+        ) : undefined;
       })}
     </>
   );

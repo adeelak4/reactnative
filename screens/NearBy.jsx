@@ -8,10 +8,11 @@ const NearBy = () => {
   const [destination, setDestination] = React.useState();
 
   const handleMarkerClick = ({ latitude, longitude }) => {
-    setDestination({
-      latitude: Number(latitude),
-      longitude: Number(longitude),
-    });
+    if (latitude && longitude)
+      setDestination({
+        latitude: Number(latitude),
+        longitude: Number(longitude),
+      });
   };
 
   return (
