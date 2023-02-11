@@ -30,6 +30,8 @@ import {
 } from "@expo-google-fonts/roboto-condensed";
 import React from "react";
 import NearBy from "./screens/NearBy";
+// import Login from "./src/components/LogIn";
+import Login from "./screens/Login"
 
 export default function App() {
   let [fontsLoad] = useFonts({
@@ -66,11 +68,11 @@ export default function App() {
             component={SplashScreen}
             options={{ headerTitle: "WELCOME", headerTitleAlign: "center" }}
           />
-          {/* <Stack.Screen
+          <Stack.Screen
             name="login"
-            component={Test}
+            component={Login}
             options={{ headerTitle: "LOG IN", headerTitleAlign: "center" }}
-          /> */}
+          />
           <Stack.Screen name="home" component={Home} options={{ headerTitle: "HOME", headerTitleAlign: "center" }} />
           <Stack.Screen
             name="contact"
