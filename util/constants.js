@@ -1,4 +1,4 @@
-const REALTIME_SERVER = "https://gps-sender-backend.herokuapp.com";
+const REALTIME_SERVER = "https://gps-sender.saqlain1020.com";
 const REALTIME_SERVER_DEVELOPMENT = "http://localhost:8000";
 export const MAPS_API = "AIzaSyDAc6yM3MzWYCyuR3OLriZLvLQy0QIJPPA";
 

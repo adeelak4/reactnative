@@ -23,18 +23,22 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.saqlain1020.KU_Point",
-      "config":{
-        "googleMaps":{
+      "config": {
+        "googleMaps": {
           "apiKey": "AIzaSyDAc6yM3MzWYCyuR3OLriZLvLQy0QIJPPA"
         }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "91e99174-1cea-4e25-b9de-99d91e7ac43a"
+      }
     }
   }
 }
