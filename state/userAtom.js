@@ -4,7 +4,7 @@ import api, { storage } from "./../util/api";
 import { socket } from "./socketAtom";
 
 const userState = atom({
-  key: "busState",
+  key: "userState",
   default: {
     token: "",
     user: {},
@@ -21,16 +21,19 @@ const userState = atom({
     },
     async ({ setSelf, onSet }) => {
       onSet(async (newValue, oldValue) => {
-        await storage.setItem("token", newValue.token);
-        if (newValue.token !== oldValue.token) {
-          const res = await api.get("/api/v1/user");
-          if (res.data?.email) {
-            setSelf({ token: newValue.token, user: res.data });
-          } else {
-            setSelf({
-              token: "",
-              user: {},
-            });
+        if (newValue.token) {
+          console.log("getting val");
+          await storage.setItem("token", newValue.token);
+          if (newValue.token !== oldValue.token) {
+            const res = await api.get("/api/v1/user");
+            if (res.data?.email) {
+              setSelf({ token: newValue.token, user: res.data });
+            } else {
+              setSelf({
+                token: "",
+                user: {},
+              });
+            }
           }
         }
       });
