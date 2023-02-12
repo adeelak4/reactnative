@@ -4,7 +4,7 @@ import { busState } from "../state/busAtom";
 const useBus = () => {
   const state = useRecoilValue(busState);
   const setState = useSetRecoilState(busState);
-console.log("asking  buss", state);
+
   const selectBus = (id) => {
     setState((prev) => ({
       ...prev,

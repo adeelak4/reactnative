@@ -66,7 +66,6 @@ const useUser = () => {
       const res = await api.post("/api/v1/product/buy", {
         days,
       });
-      console.log(res.data.data);
       if (res.data.data.iframe) {
         Linking.openURL(res.data.data.iframe);
       }
@@ -81,7 +80,6 @@ const useUser = () => {
     if (state?.user?.subscribedTill) {
       const today = new Date();
       const subscribedTill = new Date(state?.user?.subscribedTill);
-      console.log(state?.user?.subscribedTill, subscribedTill);
       const diff = subscribedTill.getTime() - today.getTime();
       const days = diff / (1000 * 3600 * 24);
       return days < 0 ? 0 : days.toFixed(1);

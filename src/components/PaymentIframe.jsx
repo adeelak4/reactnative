@@ -1,11 +1,5 @@
 import { Dimensions } from "react-native";
-import IframeRenderer from "@native-html/iframe-plugin";
-import RenderHTML from "react-native-render-html";
 import WebView from "react-native-webview";
-
-const renderers = {
-  iframe: IframeRenderer,
-};
 
 const PaymentIframe = ({ url }) => {
   const contentWidth = Dimensions.get("screen").width * 0.9;
