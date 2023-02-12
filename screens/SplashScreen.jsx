@@ -13,20 +13,18 @@ import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import useSocket from "../hooks/useSocket";
 import useBus from "../hooks/useBus";
+import useUser from "../hooks/useUser";
 
 const SplashScreen = ({ navigation }) => {
   // fadeAnim will be used as the value for opacity. Initial Value: 0
   let {} = useBus();
   let {} = useSocket();
+  useUser();
 
   return (
     <View style={styles.container}>
       <Animated.View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </Animated.View>
 
       <View style={styles.footer}>
@@ -34,11 +32,8 @@ const SplashScreen = ({ navigation }) => {
         {/* <Text style={styles.text}>Sign in with account</Text> */}
 
         <View style={styles.button}>
-          <TouchableOpacity onPress={() => navigation.navigate("home")}>
-            <LinearGradient
-              colors={["#08d4c4", "#01ab9d"]}
-              style={styles.signIn}
-            >
+          <TouchableOpacity onPress={() => navigation.navigate("login")}>
+            <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.signIn}>
               <Text style={styles.textSign}>Get Started </Text>
               <Ionicons name="arrow-forward" color="#fff" size={20} />
             </LinearGradient>
@@ -74,7 +69,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 200,
-    height: height_logo,
+    height: 200,
   },
   title: {
     color: "#05375a",

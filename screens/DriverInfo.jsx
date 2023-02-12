@@ -10,6 +10,7 @@ import {
   Animated,
   TextInput,
   FlatList,
+  ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -22,54 +23,161 @@ const DriverInfo = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
+        <Image
+          source={require("../assets/icon.png")}
+          style={styles.logo}
+          resizeMode="stretch"
+        />
       </View>
 
       <View style={styles.footer}>
         <View style={styles.wraper}>
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
-            <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image source={require("../assets/profile1.png")} style={styles.logos} resizeMode="stretch" />
-              <View>
-                <Text style={styles.title}>NOOR BHAI</Text>
-                <Text style={styles.title1}>03333986721</Text>
-                <Text style={styles.title1}>Route: Steel Town</Text>
-              </View>
-            </TouchableOpacity>
-          </LinearGradient>
+          <ScrollView contentContainerStyle={styles.contentContainer}>
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.Btn_style}
+            >
+              <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
+                <Image
+                  source={require("../assets/profile1.png")}
+                  style={styles.logos}
+                  resizeMode="stretch"
+                />
+                <View>
+                  <Text style={styles.title}>NOOR BHAI</Text>
+                  <Text style={styles.title1}>03333986721</Text>
+                  <Text style={styles.title1}>Route: Steel Town</Text>
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
 
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
-            <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image source={require("../assets/profille2.png")} style={styles.logos} resizeMode="stretch" />
-              <View>
-                <Text style={styles.title}>RAFIQ GUJJAR</Text>
-                <Text style={styles.title1}>03334566721</Text>
-                <Text style={styles.title1}>Route: KORANGI</Text>
-              </View>
-            </TouchableOpacity>
-          </LinearGradient>
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.Btn_style}
+            >
+              <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
+                <Image
+                  source={require("../assets/profille2.png")}
+                  style={styles.logos}
+                  resizeMode="stretch"
+                />
+                <View>
+                  <Text style={styles.title}>RAFIQ GUJJAR</Text>
+                  <Text style={styles.title1}>03334566721</Text>
+                  <Text style={styles.title1}>Route: KORANGI</Text>
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
 
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
-            <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image source={require("../assets/profille3.png")} style={styles.logos} resizeMode="stretch" />
-              <View>
-                <Text style={styles.title}>ARIF BHATTI</Text>
-                <Text style={styles.title1}>0334536721</Text>
-                <Text style={styles.title1}>Route: NAZIMABAD</Text>
-              </View>
-            </TouchableOpacity>
-          </LinearGradient>
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.Btn_style}
+            >
+              <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
+                <Image
+                  source={require("../assets/profille3.png")}
+                  style={styles.logos}
+                  resizeMode="stretch"
+                />
+                <View>
+                  <Text style={styles.title}>ARIF BHATTI</Text>
+                  <Text style={styles.title1}>0334536721</Text>
+                  <Text style={styles.title1}>Route: NAZIMABAD</Text>
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
 
-          <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.Btn_style}>
-            <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
-              <Image source={require("../assets/profille2.png")} style={styles.logos} resizeMode="stretch" />
-              <View>
-                <Text style={styles.title}>AKBAR BROHI</Text>
-                <Text style={styles.title1}>03334567775</Text>
-                <Text style={styles.title1}>Route: DEFENCE</Text>
-              </View>
-            </TouchableOpacity>
-          </LinearGradient>
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.Btn_style}
+            >
+              <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
+                <Image
+                  source={require("../assets/profile1.png")}
+                  style={styles.logos}
+                  resizeMode="stretch"
+                />
+                <View>
+                  <Text style={styles.title}>AKBAR BROHI</Text>
+                  <Text style={styles.title1}>03334567775</Text>
+                  <Text style={styles.title1}>Route: DEFENCE</Text>
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
+
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.Btn_style}
+            >
+              <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
+                <Image
+                  source={require("../assets/profille2.png")}
+                  style={styles.logos}
+                  resizeMode="stretch"
+                />
+                <View>
+                  <Text style={styles.title}>AKBAR BROHI</Text>
+                  <Text style={styles.title1}>03334567775</Text>
+                  <Text style={styles.title1}>Route: DEFENCE</Text>
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
+
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.Btn_style}
+            >
+              <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
+                <Image
+                  source={require("../assets/profile1.png")}
+                  style={styles.logos}
+                  resizeMode="stretch"
+                />
+                <View>
+                  <Text style={styles.title}>AKBAR BROHI</Text>
+                  <Text style={styles.title1}>03334567775</Text>
+                  <Text style={styles.title1}>Route: DEFENCE</Text>
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
+
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.Btn_style}
+            >
+              <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
+                <Image
+                  source={require("../assets/profille2.png")}
+                  style={styles.logos}
+                  resizeMode="stretch"
+                />
+                <View>
+                  <Text style={styles.title}>AKBAR BROHI</Text>
+                  <Text style={styles.title1}>03334567775</Text>
+                  <Text style={styles.title1}>Route: DEFENCE</Text>
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
+
+            <LinearGradient
+              colors={["#08d4c4", "#01ab9d"]}
+              style={styles.Btn_style}
+            >
+              <TouchableOpacity style={styles.tch_opacity} activeOpacity={0.9}>
+                <Image
+                  source={require("../assets/profile1.png")}
+                  style={styles.logos}
+                  resizeMode="stretch"
+                />
+                <View>
+                  <Text style={styles.title}>AKBAR BROHI</Text>
+                  <Text style={styles.title1}>03334567775</Text>
+                  <Text style={styles.title1}>Route: DEFENCE</Text>
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
+          </ScrollView>
+
           {/* <Text style={styles.textStyle}> mehmood bhai </Text>
           <Text> 03333538499</Text>
           <Image
@@ -77,9 +185,13 @@ const DriverInfo = ({ navigation }) => {
             style={{ width: 60, height: 60, borderRadius: 30 }}
           /> */}
         </View>
-        <View style={styles.footerImage}>
-          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
-        </View>
+        {/* <View style={styles.footerImage}>
+          <Image
+            source={require("../assets/footerImages.png")}
+            style={styles.footerImg}
+            resizeMode="stretch"
+          />
+        </View> */}
       </View>
     </View>
   );
@@ -115,6 +227,9 @@ const styles = StyleSheet.create({
     gap: "1rem",
     alignItems: "center",
   },
+  contentContainer: {
+    paddingVertical: 10,
+  },
   text_footer: {
     marginTop: 10,
     color: "#05375a",
@@ -127,8 +242,10 @@ const styles = StyleSheet.create({
     height: 100,
   },
   logos: {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
+    borderRadius: 60,
+    marginHorizontal: "5%",
   },
   textStyle: {
     fontSize: 20,
@@ -205,6 +322,7 @@ const styles = StyleSheet.create({
     elevation: 7,
     alignItems: "center",
     justifyContent: "center",
+    marginTop: 10,
   },
   tch_opacity: {
     alignItems: "center",
@@ -214,7 +332,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: 100,
     margin: 0,
-    justifyContent: "center",
   },
 });
 export default DriverInfo;
