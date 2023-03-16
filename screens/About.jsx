@@ -12,18 +12,12 @@ const About = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </View>
 
       <View style={styles.footer}>
         <View style={styles.wraper}>
-          <Text style={{ fontSize: 24, fontWeight: "bold" }}>
-            About this app
-          </Text>
+          <Text style={{ fontSize: 24, fontWeight: "bold" }}>About this app</Text>
           <Text
             style={{
               marginTop: 10,
@@ -31,34 +25,26 @@ const About = ({ navigation }) => {
               textAlign: "justify",
             }}
           >
-            This application tracks the real-time location of the bus through a
-            hardware electronic device with the server installed in it which
-            makes the user find their respective bus location and the distance
-            between them to make sure that your required bus is registered in
-            the list of this app also this app takes permission for the location
-            which user have to allow for efficient usage of this app you can
-            track more than one bus whichever you want according to your routes.
-            We won't use the location for any other purpose, this app will not
-            require any personal detail because the use of this app is
-            completely free for students. User can see their bus schedule and
-            the places where their bus will stop for a while to take students It
-            can also be used for many purposes like tracking stolen phones,
-            monitoring a transport company fleet, coordinating with family
-            members, and so on.Feel free to give your valuable feedback on the
-            contact us page as well For business inquiries Email
-            at:sk903728@gmail.com
+            This application tracks the real-time location of the bus through a hardware electronic device with the
+            server installed in it which makes the user find their respective bus location and the distance between them
+            to make sure that your required bus is registered in the list of this app also this app takes permission for
+            the location which user have to allow for efficient usage of this app you can track more than one bus
+            whichever you want according to your routes. We won't use the location for any other purpose, this app will
+            not require any personal detail because the use of this app is completely free for students. User can see
+            their bus schedule and the places where their bus will stop for a while to take students It can also be used
+            for many purposes like tracking stolen phones, monitoring a transport company fleet, coordinating with
+            family members, and so on.Feel free to give your valuable feedback on the contact us page as well For
+            business inquiries Email at:sk903728@gmail.com
             <View style={styles.container1}>
               <Text style={{ fontSize: 15 }}>TEAM</Text>
               <FlatList
                 data={[
                   { key: "Saqlain Riaz" },
                   { key: "Adeel Afzal" },
-                  { key: "Usman Qureshi" },
+                  { key: "Sumaiya Arif" },
                   { key: "Saddam Hussain" },
                 ]}
-                renderItem={({ item }) => (
-                  <Text style={styles.item}>{item.key}</Text>
-                )}
+                renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
               />
             </View>
           </Text>
