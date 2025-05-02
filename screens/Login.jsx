@@ -13,11 +13,15 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { AntDesign } from "@expo/vector-icons";
+import api from "../util/api";
+import useUser from "../hooks/useUser";
 
-const login = ({ navigation }) => {
+const Login = ({ navigation }) => {
+  const { login, signUp } = useUser();
+  const [isLogin, setIsLogin] = React.useState(true);
   const [data, setData] = React.useState({
-    username: "",
     password: "",
+    email: "",
     check_textInputChange: false,
     secureTextEntry: true,
     isValidUser: true,
@@ -31,14 +35,20 @@ const login = ({ navigation }) => {
     });
   };
 
+  const handleSubmit = async () => {
+    if (isLogin) {
+      await login(data.email, data.password);
+    } else {
+      if (data.confirmPassword === data.password) {
+        await signUp(data.email, data.password);
+      }
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.logo}
-          resizeMode="stretch"
-        />
+        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
       </View>
 
       <View style={styles.footer}>
@@ -51,6 +61,9 @@ const login = ({ navigation }) => {
             placeholder="your email"
             style={styles.textInput}
             autoCapitalize="none"
+            value={data.email}
+            // text input change
+            onChangeText={(val) => setData((prev) => ({ ...prev, email: val }))}
           />
           <Ionicons name="checkmark-circle-outline" color="#009387" size={20} />
         </View>
@@ -59,10 +72,11 @@ const login = ({ navigation }) => {
         <View style={styles.action}>
           <AntDesign name="lock" color="#009387" size={20} />
           <TextInput
-            placeholder="your password"
+            placeholder="Your password"
             style={styles.textInput}
             autoCapitalize="none"
             secureTextEntry={data.secureTextEntry ? true : false}
+            onChangeText={(val) => setData((prev) => ({ ...prev, password: val }))}
           />
 
           <TouchableOpacity onPress={updateSecureTextEntry}>
@@ -73,13 +87,33 @@ const login = ({ navigation }) => {
             )}
           </TouchableOpacity>
         </View>
+        {!isLogin && (
+          <View style={styles.action}>
+            <TextInput
+              placeholder="Confirm password"
+              style={styles.textInput}
+              autoCapitalize="none"
+              secureTextEntry={data.secureTextEntry ? true : false}
+              onChangeText={(val) => setData((prev) => ({ ...prev, confirmPassword: val }))}
+            />
+          </View>
+        )}
+        {isLogin ? (
+          <Text style={styles.link} onPress={() => setIsLogin(false)}>
+            Create Account
+          </Text>
+        ) : (
+          <Text style={styles.link} onPress={() => setIsLogin(true)}>
+            Account Exists?
+          </Text>
+        )}
 
         <View style={styles.button}>
-          <TouchableOpacity onPress={() => navigation.navigate("home")}>
-            <LinearGradient
-              colors={["#08d4c4", "#01ab9d"]}
-              style={styles.signIn}
-            >
+          <TouchableOpacity
+            // onPress={() => navigation.navigate("home")}
+            onPress={handleSubmit}
+          >
+            <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={styles.signIn}>
               <Text style={styles.textSign}>Sign In </Text>
               <Ionicons name="arrow-forward" color="#fff" size={20} />
             </LinearGradient>
@@ -87,11 +121,7 @@ const login = ({ navigation }) => {
         </View>
 
         <View style={styles.footerImage}>
-          <Image
-            source={require("../assets/footerImages.png")}
-            style={styles.footerImg}
-            resizeMode="stretch"
-          />
+          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
         </View>
       </View>
     </View>
@@ -182,6 +212,11 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     flexDirection: "row",
   },
+  link: {
+    marginLeft: "auto",
+    marginTop: 10,
+    color: "#009387",
+  },
 });
 
-export default login;
+export default Login;

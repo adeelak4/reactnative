@@ -2,20 +2,11 @@ import React from "react";
 import {
   View,
   Text,
-  TouchableOpacity,
   Dimensions,
   StyleSheet,
-  StatusBar,
   Image,
-  Animated,
-  TextInput,
+  FlatList,
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { AntDesign } from "@expo/vector-icons";
-import Menu from "./Menu";
-import Icon from "../assets/trackinfo.png";
-import Icon2 from "../assets/footerImages.png";
 
 const About = ({ navigation }) => {
   return (
@@ -27,7 +18,13 @@ const About = ({ navigation }) => {
       <View style={styles.footer}>
         <View style={styles.wraper}>
           <Text style={{ fontSize: 24, fontWeight: "bold" }}>About this app</Text>
-          <Text style={{ marginTop: 10 }}>
+          <Text
+            style={{
+              marginTop: 10,
+              color: "rgba(0,0,0,0.5)",
+              textAlign: "justify",
+            }}
+          >
             This application tracks the real-time location of the bus through a hardware electronic device with the
             server installed in it which makes the user find their respective bus location and the distance between them
             to make sure that your required bus is registered in the list of this app also this app takes permission for
@@ -37,13 +34,21 @@ const About = ({ navigation }) => {
             their bus schedule and the places where their bus will stop for a while to take students It can also be used
             for many purposes like tracking stolen phones, monitoring a transport company fleet, coordinating with
             family members, and so on.Feel free to give your valuable feedback on the contact us page as well For
-            business inquiries Email at: sk903728@gmail.com Team: Saqlain Riaz Saddam Khan Adeel Afzal Usman Qureshi
-            Project
+            business inquiries Email at:sk903728@gmail.com
+            <View style={styles.container1}>
+              <Text style={{ fontSize: 15 }}>TEAM</Text>
+              <FlatList
+                data={[
+                  { key: "Saqlain Riaz" },
+                  { key: "Adeel Afzal" },
+                  { key: "Sumaiya Arif" },
+                  { key: "Saddam Hussain" },
+                ]}
+                renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+              />
+            </View>
           </Text>
           <Text style={{ fontSize: 16 }}>Instructor: Prof: Dr. Asim Ali</Text>
-        </View>
-        <View style={styles.footerImage}>
-          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
         </View>
       </View>
     </View>
@@ -79,6 +84,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
 
     margin: 30,
+  },
+  container1: {
+    flex: 1,
+    paddingTop: 5,
+  },
+  item: {
+    padding: 5,
+    fontSize: 12,
+    height: 30,
   },
   text_footer: {
     marginTop: 10,

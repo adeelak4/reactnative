@@ -29,6 +29,13 @@ import {
   RobotoCondensed_700Bold_Italic,
 } from "@expo-google-fonts/roboto-condensed";
 import React from "react";
+import NearBy from "./screens/NearBy";
+// import Login from "./src/components/LogIn";
+import Login from "./screens/Login";
+import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
+import * as eva from "@eva-design/eva";
+import { EvaIconsPack } from "@ui-kitten/eva-icons";
+import Fares from "./screens/Fares";
 
 export default function App() {
   let [fontsLoad] = useFonts({
@@ -58,68 +65,82 @@ export default function App() {
 
   return (
     <RecoilRoot>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="SplashScreen">
-          <Stack.Screen
-            name="SplashScreen"
-            component={SplashScreen}
-            options={{ headerTitle: "WELCOME", headerTitleAlign: "center" }}
-          />
-          {/* <Stack.Screen
-            name="login"
-            component={Test}
-            options={{ headerTitle: "LOG IN", headerTitleAlign: "center" }}
-          /> */}
-          <Stack.Screen name="home" component={Home} options={{ headerTitle: "HOME", headerTitleAlign: "center" }} />
-          <Stack.Screen
-            name="contact"
-            component={Contact}
-            options={{ headerTitle: "CONTACT US", headerTitleAlign: "center" }}
-          />
-          <Stack.Screen
-            name="driverInfo"
-            component={DriverInfo}
-            options={{ headerTitle: "DRIVER INFO", headerTitleAlign: "center" }}
-          />
-          {/* <Stack.Screen
-            name="menu"
-            component={Menu}
-            options={{ headerTitle: "Meuu", headerTitleAlign: "center" }}
-          /> */}
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="SplashScreen">
+            <Stack.Screen
+              name="SplashScreen"
+              component={SplashScreen}
+              options={{ headerTitle: "WELCOME", headerTitleAlign: "center" }}
+            />
+            <Stack.Screen
+              name="login"
+              component={Login}
+              options={{ headerTitle: "LOG IN", headerTitleAlign: "center" }}
+            />
+            <Stack.Screen name="home" component={Home} options={{ headerTitle: "HOME", headerTitleAlign: "center" }} />
+            <Stack.Screen
+              name="contact"
+              component={Contact}
+              options={{ headerTitle: "CONTACT US", headerTitleAlign: "center" }}
+            />
+            <Stack.Screen
+              name="driverInfo"
+              component={DriverInfo}
+              options={{ headerTitle: "DRIVER INFO", headerTitleAlign: "center" }}
+            />
 
-          <Stack.Screen
-            name="searchTrackingBus"
-            component={SearchTrackingBus}
-            options={{ headerTitle: "BUS LIST", headerTitleAlign: "center" }}
-          />
-          <Stack.Screen
-            name="about"
-            component={About}
-            options={{ headerTitle: "ABOUT US", headerTitleAlign: "center" }}
-          />
-          <Stack.Screen
-            name="searchSchedule"
-            component={SearchSchedule}
-            options={{ headerTitle: "BUS LIST", headerTitleAlign: "center" }}
-          />
-          <Stack.Screen
-            name="trackLocation"
-            component={TrackLocation}
-            options={{
-              headerTitle: "TRACK LOCATION",
-              headerTitleAlign: "center",
-            }}
-          />
-          <Stack.Screen
-            name="busSchedule"
-            component={BusSchedule}
-            options={{
-              headerTitle: "BUS SCHEDULE",
-              headerTitleAlign: "center",
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+            <Stack.Screen
+              name="searchTrackingBus"
+              component={SearchTrackingBus}
+              options={{ headerTitle: "BUS LIST", headerTitleAlign: "center" }}
+            />
+            <Stack.Screen
+              name="about"
+              component={About}
+              options={{ headerTitle: "ABOUT US", headerTitleAlign: "center" }}
+            />
+            <Stack.Screen
+              name="searchSchedule"
+              component={SearchSchedule}
+              options={{ headerTitle: "BUS LIST", headerTitleAlign: "center" }}
+            />
+            <Stack.Screen
+              name="trackLocation"
+              component={TrackLocation}
+              options={{
+                headerTitle: "TRACK LOCATION",
+                headerTitleAlign: "center",
+              }}
+            />
+            <Stack.Screen
+              name="nearBy"
+              component={NearBy}
+              options={{
+                headerTitle: "NEARBY BUSES",
+                headerTitleAlign: "center",
+              }}
+            />
+            <Stack.Screen
+              name="busSchedule"
+              component={BusSchedule}
+              options={{
+                headerTitle: "BUS SCHEDULE",
+                headerTitleAlign: "center",
+              }}
+            />
+            <Stack.Screen
+              name="fares"
+              component={Fares}
+              options={{
+                headerTitle: "FARES",
+                headerTitleAlign: "center",
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ApplicationProvider>
     </RecoilRoot>
     // <View >``
     //  <Test />

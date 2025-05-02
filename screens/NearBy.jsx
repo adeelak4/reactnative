@@ -1,11 +1,19 @@
 import { StyleSheet, View, Dimensions } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import MapView from "react-native-maps";
 import React from "react";
-import useBus from "../hooks/useBus";
-import BusMarker from "../assets/bus_marker.png";
+import Directions from "../src/components/Directions";
+import AllBusesLocation from "../src/components/AllBusesLocation";
 
-const TrackLocation = ({ navigator }) => {
-  const { location, selectedName } = useBus();
+const NearBy = () => {
+  const [destination, setDestination] = React.useState();
+
+  const handleMarkerClick = ({ latitude, longitude }) => {
+    if (latitude && longitude)
+      setDestination({
+        latitude: Number(latitude),
+        longitude: Number(longitude),
+      });
+  };
 
   return (
     <View>
@@ -15,6 +23,7 @@ const TrackLocation = ({ navigator }) => {
         showsTraffic={true}
         showsMyLocationButton={true}
         showsScale={true}
+        loadingEnabled={true}
         style={styles.map}
         initialRegion={{
           latitude: 24.9455,
@@ -24,36 +33,21 @@ const TrackLocation = ({ navigator }) => {
         }}
       >
         {/* <Geojson geojson={myPlace} strokeColor="red" fillColor="green" strokeWidth={2} title={selectedName} /> */}
+        <Directions destination={destination} />
         {/* <MapViewDirections
           origin={myLocation}
-          destination={{ latitude: coordinates[1], longitude: coordinates[0] }}
+          destination={destination}
           apikey={MAPS_API}
           strokeWidth={4}
           strokeColor="#0096FF"
         /> */}
-        {location?.latitude && location?.longitude && (
-          <Marker
-            coordinate={{
-              latitude: Number(location?.latitude),
-              longitude: Number(location?.longitude),
-            }}
-            title={selectedName}
-            description={`Location of ${selectedName}`}
-            image={BusMarker}
-          />
-        )}
-        {/* <Marker
-          coordinate={{ latitude: myLocation[1], longitude: myLocation[0] }}
-          title={"Me"}
-          description={"Your Location"}
-          image={Dot}
-        /> */}
+        <AllBusesLocation handleMarkerClick={handleMarkerClick} />
       </MapView>
     </View>
   );
 };
 
-export default TrackLocation;
+export default NearBy;
 
 const styles = StyleSheet.create({
   map: {

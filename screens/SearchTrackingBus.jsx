@@ -1,5 +1,14 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Dimensions, StyleSheet, Image, Animated } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Dimensions,
+  StyleSheet,
+  Image,
+  Animated,
+  ScrollView,
+} from "react-native";
 import BusList from "../src/components/BusList";
 import Ionicon from "@expo/vector-icons/Feather";
 import useBus from "../hooks/useBus";
@@ -15,30 +24,40 @@ const SearchTrackingBus = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/icon.png")} style={styles.logo} resizeMode="stretch" />
+        <Image
+          source={require("../assets/icon.png")}
+          style={styles.logo}
+          resizeMode="stretch"
+        />
       </View>
 
       <View style={styles.footer}>
         <Text style={styles.sectionTitle}>Select Your Bus</Text>
-        <View style={styles.item}>
-          {busses.map((item, i) => (
-            <TouchableOpacity
-              key={i}
-              style={styles.touchBox}
-              onPress={() => {
-                handleBusClick(item._id);
-              }}
-            >
-              <Ionicon name="map-pin" color="#009387" size={20} />
-              <Text style={styles.touchText}>
-                <BusList Text={item.name} />
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+        <ScrollView contentContainerStyle={styles.contentContainer}>
+          <View style={styles.item}>
+            {busses.map((item, i) => (
+              <TouchableOpacity
+                key={i}
+                style={styles.touchBox}
+                onPress={() => {
+                  handleBusClick(item._id);
+                }}
+              >
+                <Ionicon name="map-pin" color="#009387" size={20} />
+                <Text style={styles.touchText}>
+                  <BusList Text={item.name} />
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
 
         <View style={styles.footerImage}>
-          <Image source={require("../assets/footerImages.png")} style={styles.footerImg} resizeMode="stretch" />
+          <Image
+            source={require("../assets/footerImages.png")}
+            style={styles.footerImg}
+            resizeMode="stretch"
+          />
         </View>
       </View>
     </View>
@@ -79,16 +98,17 @@ const styles = StyleSheet.create({
     height: 100,
   },
   logos: {
-    width: 130,
-    height: 130,
+    width: 90,
+    height: 90,
   },
   footerImage: {
     justifyContent: "flex-end",
-    alignItems: "center",
+    alignItems: "flex-end",
+    margin: 0,
   },
   footerImg: {
-    width: 250,
-    height: 200,
+    width: 130,
+    height: 90,
   },
   title: {
     color: "#05375a",
@@ -130,6 +150,9 @@ const styles = StyleSheet.create({
   Btn_text: {
     fontSize: 20,
     fontWeight: "300",
+  },
+  contentContainer: {
+    padding: 10,
   },
 });
 
